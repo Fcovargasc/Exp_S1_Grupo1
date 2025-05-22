@@ -41,7 +41,7 @@ public class Exp_S1_Grupo1 {
         System.out.println("5 Para Consultar saldo");
         System.out.println("6 Para Salir");
         opcion=scanner.nextInt();
-        Cliente cliente =new Cliente(rut,nombre,apellidoPaterno,apellidoMaterno,domicilio,comuna,telefono,cuenta,saldo,deposito,giro);
+        Cliente cliente =new Cliente(rut,nombre,apellidoPaterno,apellidoMaterno,domicilio,comuna,telefono,cuenta,saldo);
 
             switch(opcion){
                 case 1: 

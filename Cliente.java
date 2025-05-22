@@ -4,14 +4,14 @@ package exp_s1_grupo1;
 
 public class Cliente {
     private String rut,nombre,apellidoPaterno,apellidoMaterno,domicilio,comuna;
-    private int telefono,cuenta,saldo,deposito,giro;
+    private int telefono,cuenta,saldo;
     
   //constructor sin atributos  
 public Cliente(){} 
 
 //cosntructor con atributos
 public Cliente(String rut,String nombre , String apellidoPaterno,String apellidoMaterno,String domicilio,
-               String comuna,int telefono,int cuenta,int saldo,int deposito , int giro){
+               String comuna,int telefono,int cuenta,int saldo){
 
                this.rut=rut;
                this.nombre=nombre;
@@ -22,8 +22,7 @@ public Cliente(String rut,String nombre , String apellidoPaterno,String apellido
                this.telefono=telefono;
                this.cuenta=cuenta;
                this.saldo=saldo;
-               this.deposito=deposito;
-               this.giro=giro;
+               
                        }
 //creando setters and getters
     public String getRut(){
@@ -82,18 +81,7 @@ public Cliente(String rut,String nombre , String apellidoPaterno,String apellido
     public void setSaldo(int saldo){
         this.saldo=saldo;
     }
-    public int getDeposito(){
-        return deposito;
-    }
-    public void setDeposito(int deposito){
-        this.deposito=deposito;
-    }
-    public int getGiro(){
-        return giro;
-    }
-    public void setGiro(int giro){
-        this.giro=giro;
-    }
+    
     
     //creacion de metodos
     
