@@ -4,14 +4,14 @@ package exp_s1_grupo1;
 
 public class Cliente {
     private String rut,nombre,apellidoPaterno,apellidoMaterno,domicilio,comuna;
-    private int telefono,cuenta,saldo;
+    private int telefono,cuenta,saldo,deposito,giro;
     
   //constructor sin atributos  
 public Cliente(){} 
 
 //cosntructor con atributos
 public Cliente(String rut,String nombre , String apellidoPaterno,String apellidoMaterno,String domicilio,
-               String comuna,int telefono,int cuenta,int saldo){
+               String comuna,int telefono,int cuenta,int saldo,int deposito , int giro){
 
                this.rut=rut;
                this.nombre=nombre;
@@ -22,6 +22,8 @@ public Cliente(String rut,String nombre , String apellidoPaterno,String apellido
                this.telefono=telefono;
                this.cuenta=cuenta;
                this.saldo=saldo;
+               this.deposito=deposito;
+               this.giro=giro;
                        }
 //creando setters and getters
     public String getRut(){
@@ -78,21 +80,34 @@ public Cliente(String rut,String nombre , String apellidoPaterno,String apellido
         return saldo;
     }
     public void setSaldo(int saldo){
-        this.cuenta=cuenta;
+        this.saldo=saldo;
+    }
+    public int getDeposito(){
+        return deposito;
+    }
+    public void setDeposito(int deposito){
+        this.deposito=deposito;
+    }
+    public int getGiro(){
+        return giro;
+    }
+    public void setGiro(int giro){
+        this.giro=giro;
     }
     
     //creacion de metodos
     
     public void depositar(){
         System.out.println("¡Deposito realizado de manera exitosa! ");
-        System.out.println("Ud tiene un saldo actual de ");
+        
+
     }
     public void girar (){
         System.out.println("¡Giro Realizado de manera exitosa!");
-        System.out.println("Usted tiene un saldo actual de ");
+        
     }
     public void consultaSaldo(){
-        System.out.println("Saldo Actual");
+        System.out.println("Saldo Actual $ "+getSaldo());
     }
 
 

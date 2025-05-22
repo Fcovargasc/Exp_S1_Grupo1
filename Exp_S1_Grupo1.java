@@ -28,7 +28,7 @@ public class Exp_S1_Grupo1 {
         
         int opcion;
         String rut="",nombre="",apellidoPaterno="",apellidoMaterno="",domicilio="",comuna="";
-        int telefono=00000000,cuenta=000000000,saldo=0;
+        int telefono=00000000,cuenta=000000000,saldo=0,deposito=0,giro=0;
         
         
         System.out.println("Bienvenidos A Bank Boston");
@@ -41,10 +41,11 @@ public class Exp_S1_Grupo1 {
         System.out.println("5 Para Consultar saldo");
         System.out.println("6 Para Salir");
         opcion=scanner.nextInt();
-        Cliente cliente =new Cliente(rut,nombre,apellidoPaterno,apellidoMaterno,domicilio,comuna,telefono,cuenta,saldo);
+        Cliente cliente =new Cliente(rut,nombre,apellidoPaterno,apellidoMaterno,domicilio,comuna,telefono,cuenta,saldo,deposito,giro);
 
             switch(opcion){
                 case 1: 
+                    saldo=0;
                     System.out.println("Registro de clientes");
                     System.out.println("Ingrese su rut");
                     scanner.nextLine();
@@ -80,11 +81,23 @@ public class Exp_S1_Grupo1 {
                     break;
                 case 3:
                     System.out.println("Deposito");
-                   cliente.depositar();
+                    do{
+                    System.out.println("Ingrese monto a depositar");
+                     deposito=scanner.nextInt();
+                    }while(deposito<=0);
+                     saldo+=deposito;
+                    cliente.depositar();
+                    System.out.println("Ud tiene un saldo actual de: "+saldo);
                     break;
                 case 4:
                     System.out.println("Giro");
+                    do{
+                    System.out.println("Ingrese monto a Girar");
+                    giro=scanner.nextInt();
+                    }while(giro>=saldo||giro<0);
+                    saldo-=giro;
                     cliente.girar();
+                    System.out.println("Ud tiene un saldo actual de: "+saldo);
                     break;
                 case 5: 
                     System.out.println("Consulta saldo");
