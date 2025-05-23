@@ -95,7 +95,7 @@ public Cliente(String rut,String nombre , String apellidoPaterno,String apellido
         
     }
     public void consultaSaldo(){
-        System.out.println("Saldo Actual $ "+getSaldo());
+        System.out.println("Saldo Actual $ "+saldo);
     }
 
 

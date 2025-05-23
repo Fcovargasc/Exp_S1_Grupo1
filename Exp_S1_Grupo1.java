@@ -8,27 +8,12 @@ public class Exp_S1_Grupo1 {
 
    
     public static void main(String[] args) {
-        //Bank Boston
-        //se debe poder hacer las sig operaciones 
-        //registrar cliente(registro de datos de una persona incluye cta corriente)
-        //ver datos de cliente ( permite visualizar los datos de un cliernte)
-        //depositar dinero en pesos chilenos  
-        //girar dinero ( si la cta esta en 0 y se trata de girar lanzar un mensaje y voplver al menu principal)
-        //consultar saldo 
-        //Ejemplo cta anita
-        // Rut: 19.767.453 - 0
-         //Nombre: Anita
-         //Apellido Paterno: Morales
-         //Apellido Materno: Fuentes
-         //Domicilio: Los Alerces #123
-         //Comuna: La Cisterna
-        // Teléfono: 94534242
-        // Cuenta Corriente: 123456789
+       
         Scanner scanner= new Scanner (System.in);
         
         int opcion;
         String rut="",nombre="",apellidoPaterno="",apellidoMaterno="",domicilio="",comuna="";
-        int telefono=00000000,cuenta=000000000,saldo=0,deposito=0,giro=0;
+        int telefono=0,cuenta=0,saldo=0,deposito=0,giro=0;
         
         
         System.out.println("Bienvenidos A Bank Boston");
@@ -47,9 +32,11 @@ public class Exp_S1_Grupo1 {
                 case 1: 
                     saldo=0;
                     System.out.println("Registro de clientes");
-                    System.out.println("Ingrese su rut");
+                    do{
+                    System.out.println("Ingrese su rut con punto y guion");
                     scanner.nextLine();
                     rut=scanner.nextLine();
+                    }while(rut.length()>12||rut.length()<11);
                     System.out.println("Ingrese su Nombre");
                     nombre=scanner.nextLine();
                     System.out.println("Ingrese Apellido Paterno");
@@ -62,6 +49,7 @@ public class Exp_S1_Grupo1 {
                     comuna=scanner.nextLine();
                     System.out.println("Ingrese Numero de Telefono");
                     telefono=scanner.nextInt();
+                    
                     System.out.println("Ingrese Numero de Cuenta");
                     cuenta=scanner.nextInt();
                     
